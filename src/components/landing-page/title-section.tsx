@@ -72,7 +72,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
                       md:text-center
                       font-semibold mt-[27px] "
               >
-                Hey, I'm <span className="bg-brand-sunglow">{title}</span>
+                Hey, I&apos;m <span className="bg-brand-sunglow">{title}</span>
               </h1>
             </div>
           </>
