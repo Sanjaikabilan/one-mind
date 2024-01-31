@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import Logo from "@/../public/next.svg";
+import React, { use, useState } from "react";
+import Logo from "@/../public/atom_logo.svg"
+import LogoDark from "@/../public/atom_logo_dark.svg"
 
 import {
   NavigationMenu,
@@ -18,6 +19,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/dark-mode";
+import { useTheme } from "next-themes";
 
 const routes = [
   { title: "About", href: "#about" },
@@ -26,15 +28,26 @@ const routes = [
   { title: "Blog", href: "#blog" },
 ];
 
+const getTheme = () => {
+  const { resolvedTheme } = useTheme();
+  if (resolvedTheme === "dark") {
+    return LogoDark;
+  } else {
+    return Logo;
+  }
+};
+
+
 
 
 const Header = () => {
   const [path, setPath] = useState("#about");
+  console.log(getTheme());
   return (
-    <header className=" p-4 flex justify-center items-center dark:bg-brand-sunglow">
+    <header className=" p-4 flex justify-center items-center">
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
-        <Image src={Logo} alt="Cypress Logo" width={25} height={25} />
-        <span className=" font-semibold dark:text-white ">yourname.</span>
+        <Image src={getTheme()} alt="Atom Logo" width={25} height={25} />
+        <span className=" font-semibold dark:text-brand-sunglow ">yourname <span className=" dark:text-white font-bold" >.</span></span> 
       </Link>
 
       <NavigationMenu className="hidden md:block">
