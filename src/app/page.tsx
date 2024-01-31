@@ -2,6 +2,7 @@ import TitleSection from "@/components/landing-page/title-section";
 import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
+import SectionTemplate from "@/components/landing-page/section-template";
 
 export default function Home() {
   return (
@@ -36,7 +37,10 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <hr className=" md:w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
+      <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
+      <section>
+        <SectionTemplate title="So, Basically" pill="✨ About me" />
+      </section>
     </main>
   );
 }
