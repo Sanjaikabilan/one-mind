@@ -62,7 +62,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
             </p>
           </>
         ) : (
-            <>
+          <>
             <div className="justify-center flex flex-col">
               <h1
                 className="text-left 
@@ -76,7 +76,6 @@ const TitleSection: React.FC<TitleSectionProps> = ({
               </h1>
             </div>
           </>
-          
         )}
       </section>
     </React.Fragment>
