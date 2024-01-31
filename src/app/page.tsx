@@ -3,6 +3,14 @@ import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
+import { CLIENTS, y_n } from "@/lib/data/constants";
+
+function transformString(input: string): string {
+  // Your transformation logic here
+  return input.charAt(0).toUpperCase() + input.slice(1);
+}
+
+const your_name = transformString(y_n);
 
 export default function Home() {
   return (
@@ -15,7 +23,7 @@ export default function Home() {
         >
           <TitleSection
             pill="✨ Here We Go !"
-            title="Sanjaikabilan."
+            title={your_name}
             subheading=""
           ></TitleSection>
           <div className="md:mt-[25px] justify-center sm:w-full flex md:justify-center items-center mt-[25px] relative sm:ml-0 ml-[0px] ">
