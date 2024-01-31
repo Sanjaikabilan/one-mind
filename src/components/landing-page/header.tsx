@@ -28,7 +28,7 @@ const routes = [
   { title: "Blog", href: "#blog" },
 ];
 
-const getTheme = () => {
+const useGetTheme = () => {
   const { resolvedTheme } = useTheme();
   if (resolvedTheme === "dark") {
     return LogoDark;
@@ -42,11 +42,11 @@ const getTheme = () => {
 
 const Header = () => {
   const [path, setPath] = useState("#about");
-  console.log(getTheme());
+  console.log(useGetTheme());
   return (
     <header className=" p-4 flex justify-center items-center">
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
-        <Image src={getTheme()} alt="Atom Logo" width={25} height={25} />
+        <Image src={useGetTheme()} alt="Atom Logo" width={25} height={25} />
         <span className=" font-semibold dark:text-brand-sunglow ">yourname <span className=" dark:text-white font-bold" >.</span></span> 
       </Link>
 
