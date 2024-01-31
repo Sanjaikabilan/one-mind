@@ -42,7 +42,6 @@ const useGetTheme = () => {
 
 const Header = () => {
   const [path, setPath] = useState("#about");
-  console.log(useGetTheme());
   return (
     <header className=" p-4 flex justify-center items-center">
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
