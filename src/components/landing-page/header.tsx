@@ -46,7 +46,7 @@ const Header = () => {
     <header className=" p-4 flex justify-center items-center">
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
         <Image src={useGetTheme()} alt="Atom Logo" width={25} height={25} />
-        <span className=" font-semibold dark:text-brand-sunglow ">yourname <span className=" dark:text-white font-bold" >.</span></span> 
+        <span className=" font-semibold dark:text-brand-sunglow ">sanjaikabilan. <span className=" dark:text-white font-bold" >.</span></span> 
       </Link>
 
       <NavigationMenu className="hidden md:block">
