@@ -39,7 +39,20 @@ export default function Home() {
       </section>
       <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
       <section>
+        <div className=" overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        gap-4 md:justify-center md:items-center">
         <SectionTemplate title="So, Basically" pill="✨ About me" />
+        <p
+          className="dark:text-neutral-300 sm:max-w-[850px] mt-5
+              md:text-center"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        </div>
+        
       </section>
     </main>
   );
