@@ -47,7 +47,7 @@ export default function Home() {
       </section>
       <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
       <section>
-        <div className=" overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        <div id="about" className=" overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
         gap-4 md:justify-center md:items-center">
         <SectionTemplate title="So, Basically" pill="✨ About me" />
         <p
