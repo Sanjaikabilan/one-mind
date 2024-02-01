@@ -4,7 +4,7 @@ import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
 import { CLIENTS, y_n } from "@/lib/data/constants";
-import Magbotics from "@/../public/projects/magbotics2.png";
+import Magbotics from "@/../public/projects/magbotics.png";
 
 import {
   Card,
