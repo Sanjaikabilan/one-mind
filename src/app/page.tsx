@@ -1,4 +1,5 @@
 import TitleSection from "@/components/landing-page/title-section";
+import { SKILLS_TOP, SKILLS_BOTTOM } from "@/lib/constants";
 import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
@@ -75,7 +76,8 @@ export default function Home() {
             title="Pallete of Proficiencies"
             pill="✨ Crafting Success"
           ></SectionTemplate>
-          <InfiniteScroll skills={['']} isForward={false} />
+          <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
+          <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true}/>
         </div>
       </section>
     </main>
