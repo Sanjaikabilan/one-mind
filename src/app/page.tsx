@@ -1,10 +1,12 @@
 import TitleSection from "@/components/landing-page/title-section";
+import { SKILLS_TOP, SKILLS_BOTTOM } from "@/lib/constants";
 import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
 import { CLIENTS, y_n } from "@/lib/data/constants";
 import { MobileNav } from "@/components/ui/mobile-nav";
+import InfiniteScroll from "@/components/ui/infinite-scroll";
 
 function transformString(input: string): string {
   // Your transformation logic here
@@ -66,6 +68,17 @@ export default function Home() {
         </div>
       </section>
       <section>
+        <div
+          className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        gap-4 md:justify-center md:items-center relative"
+        >
+          <SectionTemplate
+            title="Pallete of Proficiencies"
+            pill="✨ Crafting Success"
+          ></SectionTemplate>
+          <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
+          <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true}/>
+        </div>
       </section>
     </main>
   );
