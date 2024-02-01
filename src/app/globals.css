@@ -61,3 +61,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.animate-slide {
+  animation: 20s slide linear infinite;
+}
+
+.animate-slide-reverse {
+  animation: 20s reverse linear infinite slide;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
