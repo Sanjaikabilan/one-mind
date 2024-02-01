@@ -22,6 +22,8 @@ const buttonVariants = cva(
           ' whitespace-nowrap hover:text-primary-foreground dark:bg-gradient-to-t dark:from-[#24232C] dark:to-[#100F18] dark:text-primary-foreground border hover:border-primary dark:border-[#464553] dark:hover:bg-accent hover:bg-primary dark:hover:border-muted-foreground text-lg font-normal',
         'btn-secondary':
           'whitespace-nowrap dark:text-primary-foreground text-lg font-normal',
+        'btn-sidebar':
+        'bg-transparent text-primary underline hover:text-accent hover:text-accent-foreground',
       },
       size: {
         default: "h-10 px-4 py-2",
