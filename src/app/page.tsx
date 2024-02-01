@@ -70,7 +70,7 @@ export default function Home() {
       <section>
         <div
           className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
-        gap-4 md:justify-center md:items-center"
+        gap-4 md:justify-center md:items-center relative"
         >
           <SectionTemplate
             title="Pallete of Proficiencies"
