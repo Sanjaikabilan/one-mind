@@ -5,6 +5,7 @@ import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
 import { CLIENTS, y_n } from "@/lib/data/constants";
 import { MobileNav } from "@/components/ui/mobile-nav";
+import InfiniteScroll from "@/components/ui/infinite-scroll";
 
 function transformString(input: string): string {
   // Your transformation logic here
@@ -66,6 +67,16 @@ export default function Home() {
         </div>
       </section>
       <section>
+        <div
+          className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        gap-4 md:justify-center md:items-center"
+        >
+          <SectionTemplate
+            title="Pallete of Proficiencies"
+            pill="✨ Crafting Success"
+          ></SectionTemplate>
+          <InfiniteScroll skills={['']} isForward={false} />
+        </div>
       </section>
     </main>
   );
