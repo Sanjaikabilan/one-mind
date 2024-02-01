@@ -97,8 +97,7 @@ const Header = () => {
                 <SheetHeader>
                   <SheetTitle>{y_n}</SheetTitle>
                   <SheetDescription>
-                    Make changes to your profile here. Click save when you're
-                    done.
+                      Welcome Explore, Play Around, Get Connected
                   </SheetDescription>
                 </SheetHeader>
                 <div>
