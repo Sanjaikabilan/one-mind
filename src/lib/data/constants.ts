@@ -120,3 +120,25 @@ export const PROJECTS = [
     preview: "https://via.placeholder.com/150",
   },
 ];
+
+import NodeJs from "@/../public/skills/NodeJs.png";
+import Python from "@/../public/skills/Python.png";
+import Git from "@/../public/skills/Git.png";
+import Docker from "@/../public/skills/Docker.png";
+import React from "@/../public/skills/React.png";
+
+export const SKILLS_TOP = [
+  { alt: "NodeJs", src: NodeJs },
+  { alt: "Python", src: Python },
+  { alt: "Git", src: Git },
+  { alt: "Docker", src: Docker },
+  { alt: "React", src: React },
+];
+
+export const SKILLS_BOTTOM = [
+  { alt: "NodeJs", src: NodeJs },
+  { alt: "Python", src: Python },
+  { alt: "Git", src: Git },
+  { alt: "Docker", src: Docker },
+  { alt: "React", src: React },
+];
