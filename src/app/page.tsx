@@ -1,10 +1,24 @@
 import TitleSection from "@/components/landing-page/title-section";
+import { SKILLS_TOP, SKILLS_BOTTOM } from "@/lib/constants";
 import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
-import { CLIENTS, y_n } from "@/lib/data/constants";
-import { MobileNav } from "@/components/ui/mobile-nav";
+import InfiniteScroll from "@/components/ui/infinite-scroll";
+import Logo from "@/../public/atom_logo.svg";
+import { y_n } from "@/lib/data/constants";
+
+//export metadata
+export const metadata ={
+  title: "Welcome",
+  description: `About ${y_n}`,
+  date: `${new Date().toLocaleDateString()}`,
+  type: "website",
+  image: {Logo},
+  url: `https://www.${y_n}.com`,
+  keywords: ["web", "development", "javascript", "react"],
+
+}
 
 function transformString(input: string): string {
   // Your transformation logic here
@@ -47,7 +61,7 @@ export default function Home() {
         </div>
       </section>
       <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
-      <section>
+      <section className="pb-11">
         <div
           id="about"
           className=" overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
@@ -65,7 +79,19 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
       <section>
+        <div
+          className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        gap-4 md:justify-center md:items-center relative"
+        >
+          <SectionTemplate
+            title="Pallete of Proficiencies"
+            pill="✨ Crafting Success"
+          ></SectionTemplate>
+          <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
+          <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true}/>
+        </div>
       </section>
     </main>
   );

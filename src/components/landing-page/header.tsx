@@ -35,8 +35,8 @@ import { useTheme } from "next-themes";
 import { y_n } from "@/lib/data/constants";
 
 const routes = [
-  { title: "About", href: "#about" },
-  { title: "Projects", href: "#Projects" },
+  { title: "About", href: "/" },
+  { title: "Projects", href: "/projects" },
   { title: "Journey", href: "#journey" },
   { title: "Blog", href: "#blog" },
 ];
@@ -53,7 +53,7 @@ const useGetTheme = () => {
 const SHEET_SIDES = ["left"] as const;
 
 const Header = () => {
-  const [path, setPath] = useState("#about");
+  const [path, setPath] = useState("/");
   return (
     <header className=" p-4 flex justify-center items-center">
       <a className=" mr-2 md:hidden">
@@ -102,7 +102,7 @@ const Header = () => {
                 </SheetHeader>
                 <div>
                   <Button variant={"btn-sidebar"}>
-                    <Link className="" href="#about" legacyBehavior passHref>
+                    <Link className="" href="/" legacyBehavior passHref>
                       About
                     </Link>
                   </Button>
@@ -110,7 +110,7 @@ const Header = () => {
 
                 <div>
                   <Button variant={"btn-sidebar"}>
-                    <Link className="" href="#projects" legacyBehavior passHref>
+                    <Link className="" href="/projects" legacyBehavior passHref>
                       Projects
                     </Link>
                   </Button>
@@ -150,14 +150,14 @@ const Header = () => {
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-6">
           <NavigationMenuItem>
-            <Link href="#about" legacyBehavior passHref>
+            <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 About
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="#projects" legacyBehavior passHref>
+            <Link href="/projects" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Projects
               </NavigationMenuLink>
