@@ -75,50 +75,6 @@ export default function Home() {
         </div>
       </section>
       <hr className=" w-48 h-1 mx-auto my-4 bg-brand-sunglow dark:bg-brand-sunglow border-0 rounded md:my-10"></hr>
-      <section>
-        <div
-          className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
-        gap-4 md:justify-center md:items-center"
-        >
-          <SectionTemplate title="Checkout My, Works" pill="✨ Projects" />
-          <div className=" mt-5">
-            <div className=" grid md:grid-cols-2 px-6 lg:grid-cols-3 gap-4">
-              <Card className=" border-brand-sunglow">
-                <CardHeader>
-                  <CardTitle className="" >Project Name</CardTitle>
-                  <CardDescription className=" dark:text-brand-jasmine/80" >Category</CardDescription>
-                </CardHeader>
-                <CardContent >
-                  <Image
-                    className=" rounded-lg onject-fit "
-                    src={Magbotics}
-                    alt="Project Name"
-                  ></Image>
-                </CardContent>
-                <CardFooter>
-                  <p>Stack : Html, Css, JavaScript, Django </p>
-                </CardFooter>
-              </Card>
-              <Card className=" border-brand-sunglow">
-                <CardHeader>
-                  <CardTitle>Project Name</CardTitle>
-                  <CardDescription className=" dark:text-brand-jasmine/80" >Category</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Image
-                    className=" rounded-lg onject-fit "
-                    src={Magbotics}
-                    alt="Project Name"
-                  ></Image>
-                </CardContent>
-                <CardFooter>
-                  <p>Stack : Html, Css, JavaScript, Django </p>
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
