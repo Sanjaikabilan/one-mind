@@ -7,6 +7,20 @@ import SectionTemplate from "@/components/landing-page/section-template";
 import { CLIENTS, y_n } from "@/lib/data/constants";
 import { MobileNav } from "@/components/ui/mobile-nav";
 import InfiniteScroll from "@/components/ui/infinite-scroll";
+import Magbotics from "@/../public/projects/magbotics2.png";
+import Logo from "@/../public/atom_logo.svg";
+
+//export metadata
+export const metadata ={
+  title: "Welcome",
+  description: `About ${y_n}`,
+  date: `${new Date().toLocaleDateString()}`,
+  type: "website",
+  image: {Logo},
+  url: `https://www.${y_n}.com`,
+  keywords: ["web", "development", "javascript", "react"],
+
+}
 
 function transformString(input: string): string {
   // Your transformation logic here
