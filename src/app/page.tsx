@@ -5,15 +5,19 @@ import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
 import { CLIENTS, y_n } from "@/lib/data/constants";
 import Magbotics from "@/../public/projects/magbotics2.png";
+import Logo from "@/../public/atom_logo.svg";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+//export metadata
+export const metadata ={
+  title: "Welcome",
+  description: `About ${y_n}`,
+  date: `${new Date().toLocaleDateString()}`,
+  type: "website",
+  image: {Logo},
+  url: `https://www.${y_n}.com`,
+  keywords: ["web", "development", "javascript", "react"],
+
+}
 
 function transformString(input: string): string {
   // Your transformation logic here
