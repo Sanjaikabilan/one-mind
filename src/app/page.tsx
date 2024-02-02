@@ -4,10 +4,7 @@ import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
-import { CLIENTS, y_n } from "@/lib/data/constants";
-import { MobileNav } from "@/components/ui/mobile-nav";
 import InfiniteScroll from "@/components/ui/infinite-scroll";
-import Magbotics from "@/../public/projects/magbotics2.png";
 import Logo from "@/../public/atom_logo.svg";
 
 //export metadata
