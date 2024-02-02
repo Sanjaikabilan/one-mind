@@ -66,6 +66,10 @@
   animation: 15s slide linear infinite;
 }
 
+.animate-slide-reverse {
+  animation: 20s reverse linear infinite slide;
+}
+
 @keyframes slide{
   from{
     transform: translateX(0);
