@@ -6,6 +6,7 @@ import Header from "@/components/landing-page/header";
 import SectionTemplate from "@/components/landing-page/section-template";
 import InfiniteScroll from "@/components/ui/infinite-scroll";
 import Logo from "@/../public/atom_logo.svg";
+import { y_n } from "@/lib/data/constants";
 
 //export metadata
 export const metadata ={
