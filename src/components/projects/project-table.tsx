@@ -41,7 +41,7 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
             <TableCell className="font-medium">{project.p_name}</TableCell>
             <TableCell className=" text-xs sm:text-l" >{project.p_category}</TableCell>
             <TableCell className="" >
-              <Badge className="text-xs sm:text-l" >{project.p_stack}</Badge>
+              <Badge><p className="text-xs sm:text-l" >{project.p_stack}</p></Badge>
             </TableCell>
             <TableCell className="text-right hover:underline">
               <a
