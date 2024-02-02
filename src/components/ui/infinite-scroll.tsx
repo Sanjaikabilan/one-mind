@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 type Client = {
   alt: string;
-  src: string;
+  src: string | StaticImageData;
 };
 
 type InfiniteScrollProps = {
