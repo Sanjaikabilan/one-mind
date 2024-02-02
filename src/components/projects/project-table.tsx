@@ -43,7 +43,7 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
               {project.p_category}
             </TableCell>
             <TableCell className="">
-              <div className="text-xs sm:text-l max-w-20 text-black bg-brand-sunglow rounded-lg justify-center text-center" >{project.p_stack}</div>
+              <div className="text-xs sm:text-l w-14 sm:max-w-20 text-black bg-brand-sunglow rounded-lg justify-center text-center" >{project.p_stack}</div>
             </TableCell>
             <TableCell className="text-right hover:underline">
               <a
