@@ -39,9 +39,9 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
         {projects.map((project, index) => (
           <TableRow key={index}>
             <TableCell className="font-medium">{project.p_name}</TableCell>
-            <TableCell>{project.p_category}</TableCell>
-            <TableCell>
-              <Badge>{project.p_stack}</Badge>
+            <TableCell className=" text-xs sm:text-l" >{project.p_category}</TableCell>
+            <TableCell className="" >
+              <Badge className="text-xs sm:text-l" >{project.p_stack}</Badge>
             </TableCell>
             <TableCell className="text-right hover:underline">
               <a
