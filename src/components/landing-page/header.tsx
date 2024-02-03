@@ -146,8 +146,8 @@ const Header = () => {
 
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
         <Image src={useGetTheme()} alt="Atom Logo" width={25} height={25} />
-        <span className=" hidden sm:block font-semibold dark:text-brand-sunglow ">{y_n}</span>
-        <span className=" sm:hidden font-semibold dark:text-brand-sunglow ">{short_y_n}</span>
+        <span className=" hidden sm:block font-semibold dark:text-brand-sunglow ">{y_n} .</span>
+        <span className=" sm:hidden font-semibold dark:text-brand-sunglow ">{short_y_n}.</span>
       </Link>
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-6">
