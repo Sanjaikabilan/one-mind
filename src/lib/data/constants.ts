@@ -5,6 +5,7 @@ import client4 from "@/../public/client4.png";
 import client5 from "@/../public/client5.png";
 
 export const y_n = "Your Name";
+export const short_y_n = "Yn.";
 
 export const CLIENTS = [
   { alt: "client1", logo: client1 },
