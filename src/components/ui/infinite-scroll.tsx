@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 type Client = {
   alt: string;
-  src: string;
+  src: string | StaticImageData;
 };
 
 type InfiniteScrollProps = {
@@ -59,7 +59,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({ skills, isForward }) =>
           {skills.map((client: Client) => (
             <div
               key={client.alt.toString() + animateClassName}
-              className="relative md:w-[100px] w-[50px] md:m-10 mx-4 my-2 md:my-2 shrink-0 flex items-center"
+              className="relative md:w-[40px] w-[50px] md:m-10 mx-4 my-2 md:my-2 shrink-0 flex items-center"
             >
               <Image
                 src={client.src}
@@ -69,7 +69,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({ skills, isForward }) =>
                       object-contain
                       max-w-none
                       w-[50px]
-                      md:w-[100px]
+                      md:w-[40px]
                     "
               />
             </div>
