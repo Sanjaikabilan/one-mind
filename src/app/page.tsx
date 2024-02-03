@@ -1,5 +1,5 @@
 import TitleSection from "@/components/landing-page/title-section";
-import { SKILLS_TOP, SKILLS_BOTTOM } from "@/lib/constants";
+import { SKILLS_TOP, SKILLS_BOTTOM } from "@/lib/data/constants";
 import Image from "next/image";
 import Prof from "@/../public/Developer-bro.png";
 import Header from "@/components/landing-page/header";
@@ -9,16 +9,15 @@ import Logo from "@/../public/atom_logo.svg";
 import { y_n } from "@/lib/data/constants";
 
 //export metadata
-export const metadata ={
+export const metadata = {
   title: "Welcome",
   description: `About ${y_n}`,
   date: `${new Date().toLocaleDateString()}`,
   type: "website",
-  image: {Logo},
+  image: { Logo },
   url: `https://www.${y_n}.com`,
   keywords: ["web", "development", "javascript", "react"],
-
-}
+};
 
 function transformString(input: string): string {
   // Your transformation logic here
@@ -89,8 +88,19 @@ export default function Home() {
             title="Pallete of Proficiencies"
             pill="✨ Crafting Success"
           ></SectionTemplate>
-          <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
-          <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true}/>
+                    <p
+            className="dark:text-neutral-300 sm:max-w-[850px] mt-5
+              md:text-center"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <div className="" >
+            <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
+            <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true} />
+          </div>
         </div>
       </section>
     </main>

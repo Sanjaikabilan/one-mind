@@ -33,6 +33,7 @@ import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/dark-mode";
 import { useTheme } from "next-themes";
 import { y_n } from "@/lib/data/constants";
+import { short_y_n  } from "@/lib/data/constants";
 
 const routes = [
   { title: "About", href: "/" },
@@ -43,10 +44,10 @@ const routes = [
 
 const useGetTheme = () => {
   const { resolvedTheme } = useTheme();
-  if (resolvedTheme === "dark") {
-    return LogoDark;
-  } else {
+  if (resolvedTheme === "light") {
     return Logo;
+  } else {
+    return LogoDark;
   }
 };
 
@@ -145,7 +146,8 @@ const Header = () => {
 
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
         <Image src={useGetTheme()} alt="Atom Logo" width={25} height={25} />
-        <span className=" font-semibold dark:text-brand-sunglow ">{y_n}</span>
+        <span className=" hidden sm:block font-semibold dark:text-brand-sunglow ">{y_n} .</span>
+        <span className=" sm:hidden font-semibold dark:text-brand-sunglow ">{short_y_n}.</span>
       </Link>
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-6">
@@ -181,8 +183,8 @@ const Header = () => {
       </NavigationMenu>
 
       <aside className=" flex w-full gap-2 justify-end ">
-        <Link href={"/signup"}>
-          <Button variant={"default"} className={navigationMenuTriggerStyle()}>
+        <Link href={"/contact"}>
+          <Button variant={"default"} className=" bg-transparent border-spacing-2 border border-brand-sunglow dark:text-brand-sunglow hover:dark:text-accent hover:bg-brand-sunglow">
             Get In Touch
           </Button>
         </Link>
