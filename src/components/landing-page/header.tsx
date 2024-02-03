@@ -43,10 +43,10 @@ const routes = [
 
 const useGetTheme = () => {
   const { resolvedTheme } = useTheme();
-  if (resolvedTheme === "dark") {
-    return LogoDark;
-  } else {
+  if (resolvedTheme === "light") {
     return Logo;
+  } else {
+    return LogoDark;
   }
 };
 
@@ -181,8 +181,8 @@ const Header = () => {
       </NavigationMenu>
 
       <aside className=" flex w-full gap-2 justify-end ">
-        <Link href={"/signup"}>
-          <Button variant={"default"} className={navigationMenuTriggerStyle()}>
+        <Link href={"/contact"}>
+          <Button variant={"default"} className=" bg-brand-sunglow/80 hover:bg-brand-sunglow">
             Get In Touch
           </Button>
         </Link>
