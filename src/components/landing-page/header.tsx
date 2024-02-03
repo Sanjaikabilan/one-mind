@@ -182,7 +182,7 @@ const Header = () => {
 
       <aside className=" flex w-full gap-2 justify-end ">
         <Link href={"/contact"}>
-          <Button variant={"default"} className=" bg-transparent border-spacing-2 border border-brand-sunglow dark:text-brand-sunglow hover:dark:text-accent-foreground hover:bg-brand-sunglow">
+          <Button variant={"default"} className=" bg-transparent border-spacing-2 border border-brand-sunglow dark:text-brand-sunglow hover:dark:text-accent hover:bg-brand-sunglow">
             Get In Touch
           </Button>
         </Link>
