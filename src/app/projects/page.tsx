@@ -1,17 +1,6 @@
 import SectionTemplate from "@/components/landing-page/section-template";
 import ProjectTable from "@/components/projects/project-table";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { PROJECTS } from "@/lib/data/constants";
-import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 const ProjectPage = () => {
@@ -38,6 +27,9 @@ const ProjectPage = () => {
           <ProjectTable projects={PROJECTS} />
           </div>
         </div>
+      </section>
+      <section>
+
       </section>
     </>
   );
