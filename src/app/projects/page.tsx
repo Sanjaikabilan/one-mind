@@ -2,6 +2,10 @@ import SectionTemplate from "@/components/landing-page/section-template";
 import ProjectTable from "@/components/projects/project-table";
 import { PROJECTS } from "@/lib/data/constants";
 import React from "react";
+import { getProjects } from "@/lib/supabase/queries";
+
+
+
 
 const ProjectPage = () => {
   return (
