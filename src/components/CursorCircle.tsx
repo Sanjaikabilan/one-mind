@@ -57,15 +57,15 @@ const CursorCircle: React.FC = () => {
   return (
     <div
       id="trailer"
-      className="flex justify-center items-center"
+      className="hidden justify-center items-center bg-black dark:bg-white sm:flex"
     >
       {icon && 
         <FontAwesomeIcon
          id="trailer-icon" 
          icon={icon} 
-         color="white"
+        //  color="white"
         //  style={{ fontSize: "30%" }}
-        className={`text-cursorIcon ${icon === faArrowRight ? 'rotate-icon': ''}`}
+        className={`text-cursorIcon ${icon === faArrowRight ? 'rotate-icon': ''} text-white dark:text-black`}
         />
       }
     </div>

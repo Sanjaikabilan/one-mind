@@ -43,6 +43,11 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   const [opacity, setOpacity] = useState(0);
   const previewRef = useRef(null);
   let timeoutId = useRef<number | null>(null);
+  let isTouchDevice = false;
+
+if (typeof window !== 'undefined') {
+  isTouchDevice = window.matchMedia('(hover: none)').matches;
+}
 
   const handleMouseOver = (
     e: React.MouseEvent<HTMLTableCellElement, MouseEvent>,
@@ -59,12 +64,12 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
       duration: 0.3,
     });
   };
-  
+
   const handleMouseOut = () => {
     if (timeoutId.current !== null) {
       clearTimeout(timeoutId.current);
     }
-  
+
     timeoutId.current = window.setTimeout(() => {
       setPreviewImage(null);
       gsap.to(previewRef.current, {
@@ -73,25 +78,25 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
       });
     }, 300); // delay in milliseconds
   };
-  
+
   const handleMouseMove = (e: { clientX: any; clientY: any }) => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     let x = e.clientX + 50;
     let y = e.clientY;
-  
+
     // Adjust the x position if the preview div would go out of the viewport
     if (x + 250 > screenWidth) {
       // 250 is the width of the preview div
       x = screenWidth - 250;
     }
-  
+
     // Adjust the y position if the preview div would go out of the viewport
     if (y + 150 > screenHeight) {
       // 150 is the height of the preview div
       y = e.clientY - 150;
     }
-  
+
     gsap.to(previewRef.current, {
       x: x,
       y: y,
@@ -100,7 +105,7 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   };
   return (
     <>
-    {/* <CursorCircle /> */}
+      {/* <CursorCircle /> */}
       <Table>
         <TableCaption className="dark:bg-white bg-brand-sunglow text-black/70 dark:text-black">
           A list of works till now
@@ -116,7 +121,9 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
         <TableBody>
           {projects.map((project, index) => (
             <TableRow key={index}>
-              <TableCell className="font-medium interactable" datatype="name">{project.p_name}</TableCell>
+              <TableCell className="font-medium interactable" datatype="name">
+                {project.p_name}
+              </TableCell>
               <TableCell className=" text-xs sm:text-l">
                 {project.p_category}
               </TableCell>
@@ -149,7 +156,9 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
                 className="text-right hover:underline interactable"
                 // datatype="link"
                 data-type="link"
-                onMouseOver={(e) => handleMouseOver(e, project.preview)}
+                onMouseOver={(e) =>
+                  !isTouchDevice && handleMouseOver(e, project.preview)
+                }
                 onMouseOut={handleMouseOut}
                 onMouseMove={handleMouseMove}
               >
