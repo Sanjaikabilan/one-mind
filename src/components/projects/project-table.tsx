@@ -24,6 +24,7 @@ import React, { useEffect } from "react";
 import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import CursorCircle from "../CursorCircle";
 
 interface Project {
   p_name: string;
@@ -95,6 +96,7 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   };
   return (
     <>
+    {/* <CursorCircle /> */}
       <Table>
         <TableCaption className="dark:bg-white bg-brand-sunglow text-black/70 dark:text-black">
           A list of works till now
@@ -110,7 +112,7 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
         <TableBody>
           {projects.map((project, index) => (
             <TableRow key={index}>
-              <TableCell className="font-medium">{project.p_name}</TableCell>
+              <TableCell className="font-medium interactable" datatype="name">{project.p_name}</TableCell>
               <TableCell className=" text-xs sm:text-l">
                 {project.p_category}
               </TableCell>
@@ -140,7 +142,9 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
                 {/*  */}
               </TableCell>
               <TableCell
-                className="text-right hover:underline"
+                className="text-right hover:underline interactable"
+                // datatype="link"
+                data-type="link"
                 onMouseOver={(e) => handleMouseOver(e, project.preview)}
                 onMouseOut={handleMouseOut}
                 onMouseMove={handleMouseMove}

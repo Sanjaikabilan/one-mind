@@ -70,6 +70,30 @@
   animation: 20s reverse linear infinite slide;
 }
 
+#trailer {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+body:hover > #trailer {
+  opacity: 1;
+}
+
+.rotate-icon {
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
 @keyframes slide{
   from{
     transform: translateX(0);
