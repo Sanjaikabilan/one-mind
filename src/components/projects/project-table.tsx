@@ -42,10 +42,10 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
   const previewRef = useRef(null);
-  let timeoutId = useRef(null);
+  let timeoutId = useRef<number | null>(null);
 
   const handleMouseOver = (
-    e: React.MouseEvent<HTMLTableRowElement, MouseEvent>,
+    e: React.MouseEvent<HTMLTableCellElement, MouseEvent>,
     preview: string | React.SetStateAction<null>
   ) => {
     if (timeoutId.current) {
@@ -61,7 +61,11 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   };
   
   const handleMouseOut = () => {
-    timeoutId.current = setTimeout(() => {
+    if (timeoutId.current !== null) {
+      clearTimeout(timeoutId.current);
+    }
+  
+    timeoutId.current = window.setTimeout(() => {
       setPreviewImage(null);
       gsap.to(previewRef.current, {
         opacity: 0,

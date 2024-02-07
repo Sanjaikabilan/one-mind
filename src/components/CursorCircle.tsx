@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faArrowRight, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap";
 
 const CursorCircle: React.FC = () => {
@@ -17,7 +17,9 @@ const CursorCircle: React.FC = () => {
       const interactable = (e.target as HTMLElement)?.closest(".interactable");
       const interacting = interactable !== null;
       setInteractingValue(interacting);
-      setInteractableType(interacting ? interactable.dataset.type : null);
+      if (interactable instanceof HTMLElement) {
+        setInteractableType(interacting ? interactable.dataset.type || null : null);
+      }
     };
 
     document.addEventListener("mousemove", moveCursor);
@@ -37,15 +39,15 @@ const CursorCircle: React.FC = () => {
           setIcon(faPlay);
       }
     } else {
-      setIcon(null);
+      setIcon({} as IconDefinition);
     }
   }, [interactingValue, interactableType]);
 
   useEffect(() => {
     const trailer = document.getElementById("trailer");
     gsap.to("#trailer", {
-      x: position.x - trailer?.offsetWidth / 2,
-      y: position.y - trailer?.offsetHeight / 2,
+      x: position.x - (trailer?.offsetWidth || 0) / 2,
+      y: position.y - (trailer?.offsetHeight || 0) / 2,
       ease: "power2.out",
       duration: 0.8,
       scale: interactingValue ? 4 : 1,
