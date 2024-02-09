@@ -44,10 +44,10 @@ const routes = [
 
 const useGetTheme = () => {
   const { resolvedTheme } = useTheme();
-  if (resolvedTheme === "light") {
-    return Logo;
-  } else {
+  if (resolvedTheme === "dark") {
     return LogoDark;
+  } else {
+    return Logo;
   }
 };
 
