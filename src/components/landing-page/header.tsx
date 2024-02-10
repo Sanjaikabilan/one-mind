@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Logo from "@/../public/atom_logo.svg";
 import LogoDark from "@/../public/atom_logo_dark.svg";
 
@@ -33,7 +33,7 @@ import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/dark-mode";
 import { useTheme } from "next-themes";
 import { y_n } from "@/lib/data/constants";
-import { short_y_n  } from "@/lib/data/constants";
+import { short_y_n } from "@/lib/data/constants";
 
 const routes = [
   { title: "About", href: "/" },
@@ -43,18 +43,25 @@ const routes = [
 ];
 
 const useGetTheme = () => {
-  const { resolvedTheme } = useTheme();
-  if (resolvedTheme === "light") {
-    return Logo;
-  } else {
-    return LogoDark;
-  }
+  const  resolvedTheme  = useTheme();
+  return resolvedTheme;
 };
+
 
 const SHEET_SIDES = ["left"] as const;
 
 const Header = () => {
-  const [path, setPath] = useState("/");
+  const [logo, setLogo] = useState(Logo);
+  const { resolvedTheme } = useGetTheme();
+  useEffect(() => {
+    if (resolvedTheme === "dark") {
+      setLogo(LogoDark);
+    } else {
+      setLogo(Logo);
+    }
+  }, [resolvedTheme]);
+
+
   return (
     <header className=" p-4 flex justify-center items-center">
       <a className=" mr-2 md:hidden">
@@ -98,7 +105,7 @@ const Header = () => {
                 <SheetHeader>
                   <SheetTitle>{y_n}</SheetTitle>
                   <SheetDescription>
-                      Welcome Explore, Play Around, Get Connected
+                    Welcome Explore, Play Around, Get Connected
                   </SheetDescription>
                 </SheetHeader>
                 <div>
@@ -145,9 +152,13 @@ const Header = () => {
       </a>
 
       <Link href="/" className=" w-full justify-left items-center flex gap-2 ">
-        <Image src={useGetTheme()} alt="Atom Logo" width={25} height={25} />
-        <span className=" hidden sm:block font-semibold dark:text-brand-sunglow ">{y_n} .</span>
-        <span className=" sm:hidden font-semibold dark:text-brand-sunglow ">{short_y_n}.</span>
+        <Image src={logo} alt="Atom Logo" width={25} height={25} />
+        <span className=" hidden sm:block font-semibold dark:text-brand-sunglow ">
+          {y_n} .
+        </span>
+        <span className=" sm:hidden font-semibold dark:text-brand-sunglow ">
+          {short_y_n}.
+        </span>
       </Link>
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-6">
@@ -184,7 +195,10 @@ const Header = () => {
 
       <aside className=" flex w-full gap-2 justify-end ">
         <Link href={"/contact"}>
-          <Button variant={"default"} className=" bg-transparent border-spacing-2 border border-brand-sunglow dark:text-brand-sunglow hover:dark:text-accent hover:bg-brand-sunglow">
+          <Button
+            variant={"default"}
+            className=" bg-transparent border-spacing-2 border border-brand-sunglow dark:text-brand-sunglow hover:dark:text-accent hover:bg-brand-sunglow"
+          >
             Get In Touch
           </Button>
         </Link>
