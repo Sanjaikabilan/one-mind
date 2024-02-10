@@ -4,8 +4,8 @@ import client3 from "@/../public/client3.png";
 import client4 from "@/../public/client4.png";
 import client5 from "@/../public/client5.png";
 
-export const y_n = "sanjaikabilan";
-export const short_y_n = "sk";
+export const y_n = "Your Name";
+export const short_y_n = "yn";
 
 export const CLIENTS = [
   { alt: "client1", logo: client1 },
@@ -25,61 +25,61 @@ export const PROJECTS = [
   //   preview: "#",
   // },
 
-  {
-    p_name: "Research Cell",
-    p_category: "Web development",
-    p_stack: ["Html"," Css", "Postgres", "Django"],
-    preview: "https://kctresearch.com",
-  },
+  // {
+  //   p_name: "Research Cell",
+  //   p_category: "Web development",
+  //   p_stack: ["Html"," Css", "Postgres", "Django"],
+  //   preview: "https://kctresearch.com",
+  // },
 
-  {
-    p_name: " Kumaraguru LiveStock Hackathon ",
-    p_category: "Web Development",
-    p_stack: ["Html", "Css", "jQuery"],
-    preview: "https://klh.kctresearch.com",
-  },
-  {
-    p_name: "Terwaskiey Robotics",
-    p_category: "Web Development",
-    p_stack: ["Html"," Css", "Postgres", "Django"],
-    preview: "https://terwaskiey.com",
-  },
-  {
-    p_name: "Garage KCT",
-    p_category: "Web Development",
-    p_stack: [ "Html"," Css", "Postgres", "Django"],
-    preview: "https://garage.kctresearch.com",
-  },
-  {
-    p_name: "Magbotics Innovations",
-    p_category: "Web development",
-    p_stack: ["Html", "Css", "jQuery"],
-    preview: "https://magbotics.com",
-  },
-  {
-    p_name: " KinoWave ",
-    p_category: "Web Development",
-    p_stack: ["Html", "Css", "jQuery"],
-    preview: "https://kinowave.com",
-  },
-  {
-    p_name: " Introsic Labs ",
-    p_category: "Web development",
-    p_stack: ["Html", "Css", "jQuery"],
-    preview: "https://introsic.com",
-  },
-  {
-    p_name: "One-mind",
-    p_category: "Web development",
-    p_stack: ["NextJS", "Supabase", "Postgres"],
-    preview: "/",
-  },
-  {
-    p_name: " Sike-Cypress ",
-    p_category: " Web Development",
-    p_stack: ["NextJs", "Supabase", "Postgres","Drizzle"],
-    preview: "https://sike.sanjaikabilan.me",
-  },
+  // {
+  //   p_name: " Kumaraguru LiveStock Hackathon ",
+  //   p_category: "Web Development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://klh.kctresearch.com",
+  // },
+  // {
+  //   p_name: "Terwaskiey Robotics",
+  //   p_category: "Web Development",
+  //   p_stack: ["Html"," Css", "Postgres", "Django"],
+  //   preview: "https://terwaskiey.com",
+  // },
+  // {
+  //   p_name: "Garage KCT",
+  //   p_category: "Web Development",
+  //   p_stack: [ "Html"," Css", "Postgres", "Django"],
+  //   preview: "https://garage.kctresearch.com",
+  // },
+  // {
+  //   p_name: "Magbotics Innovations",
+  //   p_category: "Web development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://magbotics.com",
+  // },
+  // {
+  //   p_name: " KinoWave ",
+  //   p_category: "Web Development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://kinowave.com",
+  // },
+  // {
+  //   p_name: " Introsic Labs ",
+  //   p_category: "Web development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://introsic.com",
+  // },
+  // {
+  //   p_name: "One-mind",
+  //   p_category: "Web development",
+  //   p_stack: ["NextJS", "Supabase", "Postgres"],
+  //   preview: "/",
+  // },
+  // {
+  //   p_name: " Sike-Cypress ",
+  //   p_category: " Web Development",
+  //   p_stack: ["NextJs", "Supabase", "Postgres","Drizzle"],
+  //   preview: "https://sike.sanjaikabilan.me",
+  // },
 ];
 
 import NodeJs from "@/../public/skills/NodeJs.png";
