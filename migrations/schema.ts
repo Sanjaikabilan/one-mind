@@ -1,4 +1,4 @@
-import { pgTable, foreignKey, pgEnum, uuid, text, timestamp } from "drizzle-orm/pg-core"
+import { pgTable, pgEnum, bigint, timestamp, text, foreignKey } from "drizzle-orm/pg-core"
   import { sql } from "drizzle-orm"
 
 export const keyStatus = pgEnum("key_status", ['expired', 'invalid', 'valid', 'default'])
@@ -9,32 +9,30 @@ export const factorStatus = pgEnum("factor_status", ['verified', 'unverified'])
 export const codeChallengeMethod = pgEnum("code_challenge_method", ['plain', 's256'])
 
 
-export const blogImages = pgTable("blog_images", {
-	id: uuid("id").defaultRandom().primaryKey().notNull(),
-	blogId: uuid("blog_id").notNull().references(() => blog.id, { onDelete: "cascade" } ),
-	image: text("image").notNull(),
-});
-
-export const projectStacks = pgTable("project_stacks", {
-	id: uuid("id").defaultRandom().primaryKey().notNull(),
-	projectId: uuid("project_id").notNull().references(() => projects.id, { onDelete: "cascade" } ),
-});
-
 export const projects = pgTable("projects", {
-	id: uuid("id").defaultRandom().primaryKey().notNull(),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
-	title: text("title").notNull(),
-	domain: text("domain").notNull(),
+	id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
+	title: text("title"),
+	domain: text("domain"),
 	category: text("category"),
+	stack: text("stack").array().default([""]),
 	preview: text("preview"),
 	previewImage: text("preview_image"),
 });
 
 export const blog = pgTable("blog", {
-	id: uuid("id").defaultRandom().primaryKey().notNull(),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
-	title: text("title").notNull(),
-	content: text("content").notNull(),
-	domain: text("domain").notNull(),
-	category: text("category"),
+	id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
+	title: text("title"),
+	content: text("content"),
+	coverImage: text("cover_image"),
+	domain: text("domain"),
+	tags: text("tags").array(),
+});
+
+export const blogImages = pgTable("blogImages", {
+	id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
+	image: text("image"),
+	pB: bigint("p_b", { mode: "number" }).references(() => blog.id, { onDelete: "cascade", onUpdate: "cascade" } ),
 });

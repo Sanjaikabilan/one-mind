@@ -1,44 +1,38 @@
-import { arrayContained } from "drizzle-orm";
-import { PgArray, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { bigint, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
-export const projects = pgTable('projects',{
-    id: uuid('id').defaultRandom().primaryKey(),
-    createdAt : timestamp('created_at',{
-        withTimezone: true,
-        mode: 'string'
-    }),
-    title : text('title').notNull(),
-    domain: text('domain').notNull(),
-    category: text('category'),
-    preview : text('preview'),
-    previewImage : text('preview_image'),
-})
+export const projects = pgTable("projects", {
+  id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true, mode: "string" })
+    .defaultNow()
+    .notNull(),
+  title: text("title"),
+  domain: text("domain"),
+  category: text("category"),
+  stack: text("stack").array().default([]),
+  preview: text("preview"),
+  previewImage: text("preview_image"),
+});
 
-export const projectStacks = pgTable('project_stacks',{
-    id: uuid('id').defaultRandom().primaryKey(),
-    projectId: uuid('project_id')
-    .notNull().
-    references(() => projects.id, {
-        onDelete: 'cascade'
-    } )
-})
+export const blog = pgTable("blog", {
+  id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true, mode: "string" })
+    .defaultNow()
+    .notNull(),
+  title: text("title"),
+  content: text("content"),
+  coverImage: text("cover_image"),
+  domain: text("domain"),
+  tags: text("tags").array(),
+});
 
-export const blog = pgTable('blog',{
-    id : uuid('id').defaultRandom().primaryKey(),
-    createdAt : timestamp('created_at',{
-        withTimezone: true,
-        mode: 'string'
-    }),
-    title : text('title').notNull(),
-    content : text('content').notNull(),
-    domain : text('domain').notNull(),
-    category : text('category'),
-})
-
-export const blogImages = pgTable('blog_images',{
-    id : uuid('id').defaultRandom().primaryKey(),
-    blogId : uuid('blog_id').notNull().references(() => blog.id, {
-        onDelete: 'cascade'
-    }),
-    image : text('image').notNull(),
-})
+export const blogImages = pgTable("blogImages", {
+  id: bigint("id", { mode: "number" }).primaryKey().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true, mode: "string" })
+    .defaultNow()
+    .notNull(),
+  image: text("image"),
+  pB: bigint("p_b", { mode: "number" }).references(() => blog.id, {
+    onDelete: "cascade",
+    onUpdate: "cascade",
+  }),
+});

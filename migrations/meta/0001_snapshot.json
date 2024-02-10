@@ -1,6 +1,6 @@
 {
-  "id": "2ee28720-2055-470e-8745-73b58dcd4108",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "197ef622-79d2-443e-81cb-29ab3f73365d",
+  "prevId": "2ee28720-2055-470e-8745-73b58dcd4108",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -145,7 +145,8 @@
           "name": "stack",
           "type": "text[]",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "default": []
         },
         "preview": {
           "name": "preview",

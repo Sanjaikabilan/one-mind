@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
+import db from "@/lib/supabase/db";
 
 const DM_Font = DM_Sans({ subsets: ["latin"] });
 
@@ -10,11 +11,14 @@ export const metadata: Metadata = {
   description: "The perfect portfolio you have ever seen!",
 };
 
+db;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+{
   return (
     <html lang="en">
       <body className={DM_Font.className}>

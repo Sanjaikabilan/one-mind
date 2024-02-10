@@ -1,5 +1,5 @@
 import { InferSelectModel } from "drizzle-orm"
-import { blog, blogImages, projectStacks, projects } from "@/../migrations/schema"
+import { blog, blogImages,  projects } from "@/../migrations/schema"
 
 export type Json =
   | string
@@ -215,7 +215,6 @@ export type Enums<
   : never
 
 
-export type projects = InferSelectModel<typeof projects>
-export type projectStacks = InferSelectModel<typeof projectStacks>
-export type blog = InferSelectModel<typeof blog>
-export type blogImages = InferSelectModel<typeof blogImages>
+export type Projects = InferSelectModel<typeof projects>
+export type Blog = InferSelectModel<typeof blog>
+export type BlogImages = InferSelectModel<typeof blogImages>
