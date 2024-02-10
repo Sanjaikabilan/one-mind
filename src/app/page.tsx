@@ -88,7 +88,7 @@ export default function Home() {
             title="Pallete of Proficiencies"
             pill="✨ Crafting Success"
           ></SectionTemplate>
-                    <p
+          <p
             className="dark:text-neutral-300 sm:max-w-[850px] mt-5
               md:text-center"
           >
@@ -97,10 +97,23 @@ export default function Home() {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <div className="" >
+          <div className="">
             <InfiniteScroll skills={SKILLS_TOP} isForward={false} />
             <InfiniteScroll skills={SKILLS_BOTTOM} isForward={true} />
           </div>
+        </div>
+      </section>
+      <section className=" pb-11" >
+        <div
+          className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
+        gap-4 md:justify-center md:items-center relative"
+        >
+          <SectionTemplate pill="✨ Influences" title="The people that Inspired us in our Journey" ></SectionTemplate>
+          <p
+            className="dark:text-neutral-300 sm:max-w-[850px] mt-5
+              md:text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              </p>
         </div>
       </section>
     </main>
