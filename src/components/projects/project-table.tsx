@@ -27,11 +27,16 @@ import Image from "next/image";
 import CursorCircle from "../CursorCircle";
 
 interface Project {
-  p_name: string;
-  p_category: string;
-  p_stack: any;
-  preview: string;
+  id : number;
+  title : string | null;
+  domain: string | null;
+  category: string | null;
+  stack: any;
+  preview: string | null;
+  previewImage: string | null;
 }
+
+
 
 interface Props {
   projects: Project[];

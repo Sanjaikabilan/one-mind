@@ -4,8 +4,8 @@ import client3 from "@/../public/client3.png";
 import client4 from "@/../public/client4.png";
 import client5 from "@/../public/client5.png";
 
-export const y_n = "Your Name";
-export const short_y_n = "yn";
+export const y_n = "sanjaikabilan";
+export const short_y_n = "sk";
 
 export const CLIENTS = [
   { alt: "client1", logo: client1 },
@@ -32,34 +32,30 @@ export const PROJECTS = [
   //   preview: "https://kctresearch.com",
   // },
 
-  {
-    p_name: " Kumaraguru LiveStock Hackathon ",
-    p_category: "Web Development",
-    p_stack: ["Html", "Css", "jQuery"],
-    // preview: "https://klh.kctresearch.com",
-    preview: '/klh.png'
-  },
-  {
-    p_name: "Terwaskiey Robotics",
-    p_category: "Web Development",
-    p_stack: ["Html"," Css", "Postgres", "Django"],
-    preview: "/terwaskiey.png",
-    // preview: "https://terwaskiey.com",
-  },
+  // {
+  //   p_name: " Kumaraguru LiveStock Hackathon ",
+  //   p_category: "Web Development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://klh.kctresearch.com",
+  // },
+  // {
+  //   p_name: "Terwaskiey Robotics",
+  //   p_category: "Web Development",
+  //   p_stack: ["Html"," Css", "Postgres", "Django"],
+  //   preview: "https://terwaskiey.com",
+  // },
   // {
   //   p_name: "Garage KCT",
   //   p_category: "Web Development",
   //   p_stack: [ "Html"," Css", "Postgres", "Django"],
   //   preview: "https://garage.kctresearch.com",
   // },
-  {
-    p_name: "Magbotics Innovations",
-    p_category: "Web development",
-    p_stack: ["Html", "Css", "jQuery"],
-    // preview: "https://magbotics.com",
-    preview: "/magbotics.png",
-
-  },
+  // {
+  //   p_name: "Magbotics Innovations",
+  //   p_category: "Web development",
+  //   p_stack: ["Html", "Css", "jQuery"],
+  //   preview: "https://magbotics.com",
+  // },
   // {
   //   p_name: " KinoWave ",
   //   p_category: "Web Development",
@@ -72,12 +68,12 @@ export const PROJECTS = [
   //   p_stack: ["Html", "Css", "jQuery"],
   //   preview: "https://introsic.com",
   // },
-  {
-    p_name: "One-mind",
-    p_category: "Web development",
-    p_stack: ["NextJS", "Supabase", "Postgres"],
-    preview: "/one-mind.png",
-  },
+  // {
+  //   p_name: "One-mind",
+  //   p_category: "Web development",
+  //   p_stack: ["NextJS", "Supabase", "Postgres"],
+  //   preview: "/",
+  // },
   // {
   //   p_name: " Sike-Cypress ",
   //   p_category: " Web Development",
