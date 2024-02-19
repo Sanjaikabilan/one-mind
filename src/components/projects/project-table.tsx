@@ -168,7 +168,7 @@ if (typeof window !== 'undefined') {
                 onMouseMove={handleMouseMove}
               >
                 <a
-                  href={project.preview}
+                  href={project.preview || ""}
                   className="justify-end items-center flex"
                 >
                   <span className="">Link</span>
@@ -185,9 +185,9 @@ if (typeof window !== 'undefined') {
                     opacity: opacity,
                   }}
                 >
-                  {previewImage && (
+                  {project.previewImage && (
                     <Image
-                      src={previewImage}
+                      src={project.previewImage}
                       alt="preview"
                       width={300}
                       height={300}
