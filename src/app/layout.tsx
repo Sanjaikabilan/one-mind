@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import db from "@/lib/supabase/db";
+import CursorCircle from "@/components/CursorCircle";
 
 const DM_Font = DM_Sans({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={DM_Font.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <CursorCircle />
           {children}
         </ThemeProvider>
       </body>
