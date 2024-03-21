@@ -7,9 +7,6 @@ import SectionTemplate from "@/components/landing-page/section-template";
 import InfiniteScroll from "@/components/ui/infinite-scroll";
 import Logo from "@/../public/atom_logo.svg";
 import { y_n } from "@/lib/data/constants";
-import { useEffect, useState } from "react";
-import { getProjects } from "@/lib/supabase/queries";
-import { Projects } from "@/lib/supabase/supabase.types";
 
 //export metadata
 export const metadata = {
@@ -29,10 +26,7 @@ function transformString(input: string): string {
 
 const your_name = transformString(y_n);
 
-
-
 export default function Home() {
-
   return (
     <main>
       <Header />
@@ -109,21 +103,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" pb-11">
+      <section className=" pb-11" >
         <div
           className="overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col
         gap-4 md:justify-center md:items-center relative"
         >
-          <SectionTemplate
-            pill="✨ Influences"
-            title="The people that Inspired us in our Journey"
-          ></SectionTemplate>
+          <SectionTemplate pill="✨ Influences" title="The people that Inspired us in our Journey" ></SectionTemplate>
           <p
             className="dark:text-neutral-300 sm:max-w-[850px] mt-5
-              md:text-center"
-          >
+              md:text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          </p>
+              </p>
         </div>
       </section>
     </main>
