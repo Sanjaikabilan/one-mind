@@ -25,17 +25,18 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import CursorCircle from "../CursorCircle";
-import Link from "next/link";
 
 interface Project {
-  id: number;
-  title: string | null;
+  id : number;
+  title : string | null;
   domain: string | null;
   category: string | null;
   stack: any;
   preview: string | null;
   previewImage: string | null;
 }
+
+
 
 interface Props {
   projects: Project[];
@@ -49,9 +50,9 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
   let timeoutId = useRef<number | null>(null);
   let isTouchDevice = false;
 
-  if (typeof window !== "undefined") {
-    isTouchDevice = window.matchMedia("(hover: none)").matches;
-  }
+if (typeof window !== 'undefined') {
+  isTouchDevice = window.matchMedia('(hover: none)').matches;
+}
 
   const handleMouseOver = (
     e: React.MouseEvent<HTMLTableCellElement, MouseEvent>,
@@ -126,13 +127,13 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
           {projects.map((project, index) => (
             <TableRow key={index}>
               <TableCell className="font-medium interactable" datatype="name">
-                {project.title}
+                {project.p_name}
               </TableCell>
               <TableCell className=" text-xs sm:text-l">
-                {project.category}
+                {project.p_category}
               </TableCell>
               <TableCell className="sm:grid sm:gap-2 sm:grid-cols-4">
-                {project.stack.map(
+                {project.p_stack.map(
                   (
                     stackItem:
                       | string
@@ -154,25 +155,25 @@ const ProjectTable: React.FC<Props> = ({ projects }) => {
                     </div>
                   )
                 )}
+                {/*  */}
               </TableCell>
               <TableCell
                 className="text-right hover:underline interactable"
                 // datatype="link"
                 data-type="link"
                 onMouseOver={(e) =>
-                  !isTouchDevice && handleMouseOver(e, project.previewImage)
+                  !isTouchDevice && handleMouseOver(e, project.preview)
                 }
                 onMouseOut={handleMouseOut}
                 onMouseMove={handleMouseMove}
               >
-                <Link
-                  href={project.preview || '#'}
+                <a
+                  href={project.preview}
                   className="justify-end items-center flex"
-                  target="_blank"
                 >
                   <span className="">Link</span>
                   <ArrowUpRight size={18} />
-                </Link>
+                </a>
                 <div
                   ref={previewRef}
                   onMouseOver={() => clearTimeout(timeoutId.current!)}

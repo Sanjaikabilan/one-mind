@@ -4,8 +4,8 @@ import client3 from "@/../public/client3.png";
 import client4 from "@/../public/client4.png";
 import client5 from "@/../public/client5.png";
 
-export const y_n = "Vijay Anand";
-export const short_y_n = "vj";
+export const y_n = "sanjaikabilan";
+export const short_y_n = "sk";
 
 export const CLIENTS = [
   { alt: "client1", logo: client1 },
@@ -24,12 +24,14 @@ export const PROJECTS = [
   //   p_stack: ["Stack 1", "Stack 2", "Stack 3"],
   //   preview: "#",
   // },
+
   // {
   //   p_name: "Research Cell",
   //   p_category: "Web development",
   //   p_stack: ["Html"," Css", "Postgres", "Django"],
   //   preview: "https://kctresearch.com",
   // },
+
   // {
   //   p_name: " Kumaraguru LiveStock Hackathon ",
   //   p_category: "Web Development",
