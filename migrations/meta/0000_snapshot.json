@@ -1,5 +1,5 @@
 {
-  "id": "2ee28720-2055-470e-8745-73b58dcd4108",
+  "id": "00654403-e9a8-4041-9bff-9c7f9fb294bb",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -145,7 +145,8 @@
           "name": "stack",
           "type": "text[]",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "default": []
         },
         "preview": {
           "name": "preview",

@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1707398200878,
-      "tag": "0000_clumsy_human_fly",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1707559104357,
-      "tag": "0001_hard_naoko",
+      "when": 1711252920518,
+      "tag": "0000_brainy_zarek",
       "breakpoints": true
     }
   ]
