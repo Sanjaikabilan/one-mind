@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707398200878,
+      "tag": "0000_clumsy_human_fly",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1707559104357,
+      "tag": "0001_hard_naoko",
+      "breakpoints": true
+    }
+  ]
+}
